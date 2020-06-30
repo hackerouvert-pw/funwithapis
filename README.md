@@ -1,24 +1,18 @@
-# README
+# Fun with apis!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a API-only application. You are free to query it at [this
+address](https://funwithapis.herokuapp.com/).
 
-Things you may want to cover:
+Query the different fields to find the secret of the Magic Cow!
 
-* Ruby version
+It's dangerous out there, you might need this:
 
-* System dependencies
 
-* Configuration
+```sh
+curl localhost:3000/say
+  -H 'Content-Type: application/json'
+  -d '{"message": "Hello world!"}'
+| ruby -r json -e "print JSON.parse(STDIN.read)['message']"
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This application has been built from an idea of [RapidAPI](https://rapidapi.com/blog/how-to-build-an-api-in-ruby/).
